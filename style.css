@@ -6,6 +6,7 @@
 	box-sizing: border-box;
 	font-size: 20px;
 	font-family: 'Source Code Pro', monospace;
+	transition: all 0.5s ease;
 }
 
 section{
@@ -15,6 +16,11 @@ section{
 	align-items: center;
 	justify-content: center;
 	background-color: #e7e7e7;
+	padding: 0 20px;
+}
+
+section.dark{
+	background: #363636;
 }
 
 section .container{
@@ -23,10 +29,46 @@ section .container{
 	justify-content: center;
 	height: 220px;
 	width: 100%;
-	max-width: 550px;
+	max-width: 560px;
 	background-color: #fff;
-	box-shadow: 0 5px 10px #5a5a5a94;
+	box-shadow: 0 5px 10px #11111194;
 	border-radius: 11px;
+	position: relative;
+}
+
+section.dark .container{
+	background: #505050;
+}
+
+section .container .icon i{
+	position: absolute;
+	right: 17px;
+	top: 17px;
+	height: 30px;
+	width: 30px;
+	background-color: #313131;
+	color: #fff;
+	text-align: center;
+	line-height: 30px;
+	border-radius: 50%;
+	font-size: 14px; 
+	cursor: pointer;
+}
+
+section.dark .container .icon i{
+	background: #fff;
+	color: #363636;
+}
+
+.container .icon i.fa-sun{
+	opacity: 0;
+	pointer-events: none;
+}
+
+section.dark .container .icon i.fa-sun{
+	opacity: 1;
+	pointer-events: auto;
+	font-size: 16px;
 }
 
 section .container .time{
@@ -37,6 +79,20 @@ section .container .time{
 .container .time .time-colon{
 	display: flex;
 	align-items: center;
+	position: relative;
+}
+
+.time .time-colon .am_pm{
+	position: absolute;
+	top: 0;
+	right: -45px;
+	font-size: 20px;
+	font-weight: 600;
+	letter-spacing: 1px;
+}
+
+section.dark .time .time-colon .am_pm{
+	color: #fff;
 }
 
 .time .time-colon .time-text{
@@ -47,8 +103,12 @@ section .container .time{
 	justify-content: center;
 	flex-direction: column;
 	background-color: #e7e7e7;
-	box-shadow: 0 5px 10px #5a5a5a94;
+	box-shadow: 0 5px 10px #11111194;
 	border-radius: 7px;
+}
+
+section.dark .time .time-colon .time-text{
+	background: #353535;
 }
 
 .time .time-colon .colon{
@@ -66,4 +126,16 @@ section .container .time{
 	font-size: 12px;
 	font-weight: 700;
 	letter-spacing: 2px;
+}
+
+section.dark .time .time-colon .colon{
+	color: #fff;
+}
+
+section.dark .time .time-colon .num{
+	color: #fff;
+}
+
+section.dark .time .time-colon .text{
+	color: #fff;
 }
